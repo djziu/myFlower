@@ -38,7 +38,6 @@ const HmMiddle = styled.div`
 `;
 
 const HmRight = styled.div`
-    position:relative;
     float:right;
     font-size:13px;
     padding-left:20px;
@@ -55,7 +54,7 @@ const SearchBox = styled.div`
     position:relative;
     overflow:hidden;
     width:80%;
-    border: 2px solid #FF4747;
+    border: 2px solid #0089ff;
     border-right:0 none;
     border-radius: 4px 0 0 4px;
 `;
@@ -94,7 +93,7 @@ const SearchBtn = styled.button`
     right:0;
     width:40px;
     height: 36px;
-    background-color:#FF4747;
+    background-color:#0089ff;
     border-radius: 0 4px 4px 0;
     cursor:pointer;
 `;
@@ -152,9 +151,10 @@ const ResigterDiv = styled.div`
 const LogInBtn = styled.div`
     width:180px;
     height: 50px;
+    margin-top:45px;
     text-align: center;
     font-size:  20px;
-    background-color:red;
+    border-bottom: 1px solid black;
     &:hover + ${ResigterDiv} {
         opacity:1;
         z-index:0;
@@ -194,9 +194,7 @@ export default withRouter(({location:{pathname}}) =>(
         <HmLeft>
         
       <div className="App">
-        <FormattedMessage id="header" tagName="h1" />
-        <FormattedMessage id="title" tagName="h2" />
-        
+        로고
       </div>
     
         </HmLeft>
@@ -228,7 +226,7 @@ export default withRouter(({location:{pathname}}) =>(
             <LogInDiv>
             <LanguageSwitch />
                 <LogInBtn current={pathname === "/logIn"} >
-                    <SLink to="/logIn">계정</SLink>
+                    <SLink to="/logIn"><FormattedMessage id="account" /></SLink>
                 </LogInBtn>
                 <ResigterDiv>
                     <SButton>가입</SButton>

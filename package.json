@@ -27,6 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "homepage": "https://djziu.github.io/myFlower/", 
   "browserslist": [
     ">0.2%",
     "not dead",
@@ -34,6 +35,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-facebook-login": "^4.1.1"
+    "react-facebook-login": "^4.1.1",
+    "gh-pages": "^1.2.0",
+    "push-dir": "^0.4.1"
   }
 }

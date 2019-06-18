@@ -90,6 +90,7 @@ const Account = ({children, pathname}) =>{
     return(
         <HmRight>  
         <LogInDiv>
+        <LanguageSwitch />
             <LogInBtn current={pathname === "/logIn"} >
                 <SLink to="/logIn"><FormattedMessage id="account" /></SLink>
             </LogInBtn>

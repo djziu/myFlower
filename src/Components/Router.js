@@ -7,12 +7,12 @@ import {
 } from 'react-router-dom';
 import Home from '../Routes/Home';
 import Auth from '../Routes/Auth';
-import Header from "../Components/Header";
+import HeaderContainer from "./Header/HeaderContainer";
 
 export default () => (
     <Router>
         <>
-        <Header/>
+        <HeaderContainer/>
         <Switch>
             <Route path="/" exact  component={Home} />
             <Route path="/logIn" exact  component={Auth} />

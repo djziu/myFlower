@@ -2,14 +2,15 @@ import  React from 'react';
 import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 import {FocusEvent} from 'react';
-import Home from '../Routes/Home';
-import LanguageSwitch from "./LanguageSwitch";
-import { IntlProviderWrapper } from "../IntlContext";
+import Home from '../../Routes/Home';
+import LanguageSwitch from "../LanguageSwitch";
+import { IntlProviderWrapper } from "../../IntlContext";
 import { FormattedMessage } from "react-intl";
+import LoginButton from "../LoginButton";
 
 
 
-const Header = styled.header`
+const HeaderDiv = styled.header`
     position:fixed;
     top:0;
     left:0;
@@ -42,7 +43,6 @@ const HmRight = styled.div`
     font-size:13px;
     padding-left:20px;
     z-index:11;
-
 `;
 
 const List = styled.div`
@@ -144,7 +144,6 @@ const ResigterDiv = styled.div`
             z-index:0;
         }
     }
-
 `;
 
 
@@ -170,7 +169,6 @@ const SLink = styled(Link)`
 `;
 
 const SButton = styled.button`
-
     height: 44px;
     width:40%
     background: #FF4747;
@@ -188,9 +186,10 @@ const SButton = styled.button`
 
 
 
-export default withRouter(({location:{pathname}}) =>(
+const Header = ({children, pathname}) =>{
+    return(
     <IntlProviderWrapper>
-    <Header>
+    <HeaderDiv>
         <HmLeft>
         
       <div className="App">
@@ -222,20 +221,12 @@ export default withRouter(({location:{pathname}}) =>(
            
 
         </HmMiddle>
-        <HmRight>  
-            <LogInDiv>
-            <LanguageSwitch />
-                <LogInBtn current={pathname === "/logIn"} >
-                    <SLink to="/logIn"><FormattedMessage id="account" /></SLink>
-                </LogInBtn>
-                <ResigterDiv>
-                    <SButton>가입</SButton>
-                    <SButton>로그인  </SButton>
-                </ResigterDiv>
-            </LogInDiv>
-         
-        </HmRight>    
-    </Header>
-    </IntlProviderWrapper>
 
-));
+        {children}
+             
+    </HeaderDiv>
+    </IntlProviderWrapper>
+    );
+
+};
+export default Header;

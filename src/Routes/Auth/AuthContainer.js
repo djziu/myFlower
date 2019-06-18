@@ -1,11 +1,38 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 import AuthPresenter from "./AuthPresenter";
+import { connect } from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as baseActions from '../../redux/modules/base';
+import { Route } from 'react-router-dom';
+import { Login, Register } from '../Auth';
 
-export default () => {
+export  class AuthContainer extends React.Component {
 
-    return(
-        <AuthPresenter
-        />
-    )
+       // 페이지에 진입 할 때 헤더를 비활성화
+      componentWillMount() {
+        this.props.BaseActions.setHeaderVisibility(false);
+    }
+
+    // 페이지에서 벗어 날 때 다시 활성화
+    componentWillUnmount() {
+        this.props.BaseActions.setHeaderVisibility(true);
+    }
+    render() {
+        return(
+            <AuthPresenter>
+                 <Route path="/auth/login" component={Login}/>
+                <Route path="/auth/register" component={Register}/>
+            </AuthPresenter>
+        )
+    }
 }
+
+export default connect(
+    (state) => ({
+
+    }),
+    (dispatch) => ({
+        BaseActions: bindActionCreators(baseActions, dispatch)
+    })
+)(AuthContainer);

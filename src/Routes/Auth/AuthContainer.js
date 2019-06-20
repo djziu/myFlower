@@ -4,7 +4,12 @@ import AuthPresenter from "./AuthPresenter";
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as baseActions from '../../redux/modules/base';
-import { Route } from 'react-router-dom';
+import {
+    HashRouter as Router,
+    Route,
+    Redirect,
+    Switch
+} from 'react-router-dom';
 import { Login, Register } from '../Auth';
 
 export  class AuthContainer extends React.Component {
@@ -20,10 +25,7 @@ export  class AuthContainer extends React.Component {
     }
     render() {
         return(
-            <AuthPresenter>
-                 <Route path="/auth/login" component={Login}/>
-                <Route path="/auth/register" component={Register}/>
-            </AuthPresenter>
+            <AuthPresenter/>
         )
     }
 }

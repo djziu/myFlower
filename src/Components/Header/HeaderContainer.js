@@ -11,7 +11,6 @@ class HeaderContainer extends Component {
 
         if(visible){
         return (
-        
            
            <Header> 
               <Account/>   
@@ -21,8 +20,6 @@ class HeaderContainer extends Component {
         }else{
             return (
                 <Header/> 
-                    
-                
             )
         }
     }

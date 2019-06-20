@@ -208,6 +208,7 @@ const Header = ({children, pathname}) =>{
                 <Item current={pathname === "/gift"}>
                     <SLink to= "/gift"><FormattedMessage id="gift" /></SLink>
                 </Item>
+       
             </List>
      
             <SearchBox>

@@ -47,20 +47,49 @@ const Contents = styled.div`
 `;
 
 
+const SLink = styled(Link)`
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const Item = styled.div`
+    width:50%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 3px solid
+    ${props => (props.current ? "#3498db" : "transparent")};
+    font-size:  20px;
+    transition: border-bottom 0.5s ease-in-out;
+`;
+
+
+const List = styled.div`
+    display: flex;
+    width: 100%;
+`;
 
 const responseFacebook = (response) => {
     console.log(response);
   }
 
 
-  const AuthPresenter = ({children}) => (
+  const AuthPresenter = ({children,pathname}) => (
     <Positioner>
         <ShadowedBox>
             <LogoWrapper>
-                <Logo to="/">HEURM</Logo>
+                <Logo to="/">FLOWER</Logo>
             </LogoWrapper>
             <Contents>
-                {children}
+            <List>
+                <Item>
+                    <SLink to="/auth/login">로그인</SLink>
+                </Item>
+                <Item>
+                    <SLink to="/auth/register">회원가입</SLink>
+                </Item>
+            </List>
             </Contents>
         </ShadowedBox>
     </Positioner>

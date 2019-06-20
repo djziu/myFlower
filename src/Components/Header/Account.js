@@ -30,12 +30,11 @@ ${LogInBtn}:hover {
 
 
 const ResigterDiv = styled.div`
-position: absolute;
-top:500;
-right:10;
+
 width:180px;
 height: 150px;
 text-align: center;
+padding-top:30%;
 background-color:#ffff;
 font-size:  20px;
 z-index:-99999;

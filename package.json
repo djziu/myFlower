@@ -12,7 +12,7 @@
     "dotenv": "^8.0.0",
     "gh-pages": "^2.0.1",
     "immutable": "^4.0.0-rc.12",
-    "mongoose": "^5.5.14",
+    "mongoose": "^5.7.5",
     "open-color": "^1.7.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
